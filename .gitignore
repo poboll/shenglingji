@@ -1,0 +1,23 @@
+# IDE and Editor folders
+.vscode/
+.cursor/
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build and Dependencies
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.* 
