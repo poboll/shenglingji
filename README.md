@@ -1,4 +1,4 @@
-# Shenglingji (圣灵集)
+# Shenglingji (生灵集)
 
 A modern social media platform built with Android native and Node.js.
 
