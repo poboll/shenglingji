@@ -16,8 +16,32 @@ Thumbs.db
 node_modules/
 dist/
 build/
+.gradle/
+*.gradle
 
 # Environment files
 .env
 .env.local
-.env.* 
+.env.*
+
+# Large files and uploads
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.pdf
+shenglingji-backend/public/uploads/
+
+# Package files
+package-lock.json
+*.lock
+
+# Android specific
+*.apk
+*.aab
+*.dex
+*.class
+local.properties
