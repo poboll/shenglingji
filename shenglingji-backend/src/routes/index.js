@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const userRoutes = require('./userRoutes');
+const utilsRoutes = require('./utils');
+const postRoutes = require('./postRoutes');
 
 // API路由
 router.use('/users', userRoutes);
+router.use('/utils', utilsRoutes);
+router.use('/posts', postRoutes);
 
 // 健康检查
 router.get('/health', (req, res) => {

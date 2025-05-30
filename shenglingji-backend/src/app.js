@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const path = require('path');
 const routes = require('./routes');
 const { Sequelize } = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
@@ -14,6 +15,9 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// 静态文件服务
+app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 // API路由
 app.use('/api', routes);

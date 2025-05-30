@@ -98,3 +98,50 @@ npm start
 - 请求头: { Authorization: "Bearer TOKEN" }
 - 请求体: { currentPassword, newPassword }
 - 响应: { message }
+
+## 数据库更新
+
+### 更新 Post 表结构
+
+数据库结构有更新，需要执行以下SQL脚本添加新的字段：
+
+```bash
+# 登录到MySQL
+mysql -u root -p
+
+# 执行更新脚本
+source /path/to/db/update_post_table.sql
+```
+
+或者直接在MySQL中运行 `db/update_post_table.sql` 文件中的SQL语句。
+
+这次更新添加了以下字段：
+- `coverImage` - 帖子封面图片URL
+- `mediaUrl` - 帖子主要媒体URL
+- `mediaType` - 帖子媒体类型（image/video）
+
+## 问题修复
+
+### 500错误修复
+
+修复了获取帖子详情API返回500错误的问题：
+
+1. 错误原因："Unknown column 'Post.coverImage' in 'field list'"
+2. 解决方案：
+   - 在Post模型中添加了缺失的字段（coverImage, mediaUrl, mediaType）
+   - 创建了数据库更新脚本来添加这些字段
+   - 修改了getPostDetail接口的实现，确保返回的数据包含前端需要的所有字段
+
+### 视频帖子和图片帖子预览
+
+增强了帖子预览功能：
+
+1. 在后端：
+   - 添加了更多的帖子元数据（mediaType, coverImage, mediaUrl）
+   - 为没有设置这些字段的帖子自动填充值
+
+2. 在前端：
+   - 改进了帖子模型，支持更丰富的字段
+   - 添加了帖子类型判断逻辑
+   - 实现了帖子预览的回退逻辑，即使API请求失败也能显示内容
+   - 改进了错误处理，显示更友好的错误信息

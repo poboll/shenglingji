@@ -47,9 +47,12 @@ module.exports = (sequelize, DataTypes) => {
     phone: {
       type: DataTypes.STRING(20),
       allowNull: true,
-      unique: true,
       validate: {
-        is: /^[0-9]+$/i
+        isNumericOrNullOrEmpty(value) {
+          if (value !== null && value !== '' && !/^[0-9]+$/i.test(value)) {
+            throw new Error('Phone number must contain only digits if provided.');
+          }
+        }
       }
     },
     gender: {
