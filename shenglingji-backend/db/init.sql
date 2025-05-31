@@ -42,4 +42,19 @@ CREATE TABLE IF NOT EXISTS `Profiles` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 创建评论表
+CREATE TABLE IF NOT EXISTS `Comments` (
+  `id` varchar(36) NOT NULL,
+  `postId` varchar(36) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `likes` int(11) DEFAULT 0,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `postId` (`postId`),
+  KEY `userId` (`userId`),
+  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; 

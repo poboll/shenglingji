@@ -86,6 +86,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'postId',
       as: 'videos'
     });
+
+    // 与评论建立关联
+    Post.hasMany(models.Comment, {
+      foreignKey: 'postId',
+      as: 'comments'
+    });
   };
 
   return Post;
