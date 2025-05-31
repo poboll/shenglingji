@@ -134,10 +134,16 @@ exports.login = async (req, res) => {
 exports.getCurrentUser = async (req, res) => {
   try {
     // req.user 由鉴权中间件添加
-    const user = req.user;
+    const userId = req.user.userId;
+
+    // 获取完整的用户信息
+    const user = await User.findByPk(userId);
+    if (!user) {
+      return res.status(404).json({ message: '用户不存在' });
+    }
 
     // 获取用户资料
-    const profile = await Profile.findOne({ where: { userId: user.id } });
+    const profile = await Profile.findOne({ where: { userId } });
 
     res.json({
       user: {
@@ -165,7 +171,7 @@ exports.getCurrentUser = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     const { nickname, bio, avatar, gender, birthday, phone } = req.body;
-    const userId = req.user.id;
+    const userId = req.user.userId;
 
     // 1. 更新用户基本信息
     await User.update(
@@ -207,7 +213,7 @@ exports.updateUser = async (req, res) => {
 exports.updateProfile = async (req, res) => {
   try {
     const { location, website, education, occupation, interests, social_links, preferences } = req.body;
-    const userId = req.user.id;
+    const userId = req.user.userId;
 
     // 查找或创建用户资料
     const [profile, created] = await Profile.findOrCreate({
@@ -240,7 +246,7 @@ exports.updateProfile = async (req, res) => {
 exports.changePassword = async (req, res) => {
   try {
     const { currentPassword, newPassword } = req.body;
-    const userId = req.user.id;
+    const userId = req.user.userId;
 
     // 获取用户
     const user = await User.findByPk(userId);
@@ -265,7 +271,7 @@ exports.changePassword = async (req, res) => {
 // 上传头像
 exports.uploadAvatar = async (req, res) => {
   try {
-    const userId = req.user.id;
+    const userId = req.user.userId;
     if (!req.file) {
       return res.status(400).json({ message: '没有上传文件' });
     }
