@@ -1,4 +1,4 @@
-const { Post, User, PostImage, PostVideo, UserFollowing } = require('../models');
+const { Post, User, PostImage, PostVideo, UserFollowing, Comment } = require('../models');
 const { Op } = require('sequelize');
 
 // 获取植物帖子列表
@@ -418,6 +418,19 @@ const getPostById = async (req, res) => {
         {
           model: PostVideo,
           as: 'videos'
+        },
+        {
+          model: Comment,
+          as: 'comments',
+          include: [
+            {
+              model: User,
+              as: 'user',
+              attributes: ['id', 'username', 'avatar', 'nickname']
+            }
+          ],
+          order: [['createdAt', 'DESC']],
+          limit: 20 // 默认只返回20条评论
         }
       ]
     });
@@ -440,6 +453,26 @@ const getPostById = async (req, res) => {
       postData.type = 'image';
       postData.mediaUrl = postData.images[0].imageUrl;
       postData.coverImage = postData.images[0].imageUrl;
+    }
+
+    // 格式化评论数据
+    if (postData.comments) {
+      postData.comments = postData.comments.map(comment => {
+        const user = comment.user;
+        return {
+          id: comment.id,
+          postId: comment.postId,
+          content: comment.content,
+          likes: comment.likes,
+          createdAt: comment.createdAt,
+          user: {
+            id: user.id.toString(),
+            name: user.nickname || user.username,
+            userName: user.username,
+            userAvatar: user.avatar
+          }
+        };
+      });
     }
 
     // 增加浏览量
