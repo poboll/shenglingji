@@ -1,0 +1,3 @@
+[submodule "shenglingji-android"]
+	path = shenglingji-android
+	url = https://github.com/poboll/shenglingji-android
