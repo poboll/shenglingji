@@ -1,5 +1,5 @@
 const { Post, User, PostImage, PostVideo, UserFollowing, Comment } = require('../models');
-const { Op } = require('sequelize');
+const { Op, literal } = require('sequelize');
 
 // 获取植物帖子列表
 exports.getPlantPosts = async (req, res) => {
@@ -487,6 +487,138 @@ const getPostById = async (req, res) => {
     res.status(500).json({
       success: false,
       message: '获取帖子详情失败',
+      error: error.message
+    });
+  }
+};
+
+// 搜索帖子
+exports.searchPosts = async (req, res) => {
+  try {
+    const {
+      query,
+      type,
+      page = 1,
+      limit = 10,
+      sort = 'relevance', // relevance, newest, oldest
+      mediaType
+    } = req.query;
+
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: '搜索关键词是必须的'
+      });
+    }
+
+    const offset = (parseInt(page) - 1) * parseInt(limit);
+
+    // 构建搜索条件
+    const whereClause = {
+      [Op.or]: [
+        { title: { [Op.like]: `%${query}%` } },
+        { content: { [Op.like]: `%${query}%` } }
+      ]
+    };
+
+    // 如果指定了类型，添加类型过滤
+    if (type) {
+      whereClause.type = parseInt(type); // 1 = 植物, 2 = 动物
+    }
+
+    // 如果指定了媒体类型，添加媒体类型过滤
+    if (mediaType) {
+      whereClause.mediaType = mediaType; // 'image' 或 'video'
+    }
+
+    // 确定排序规则
+    let order;
+    switch (sort) {
+      case 'newest':
+        order = [['createdAt', 'DESC']];
+        break;
+      case 'oldest':
+        order = [['createdAt', 'ASC']];
+        break;
+      case 'popular':
+        order = [['likes', 'DESC']];
+        break;
+      case 'relevance':
+      default:
+        // 相关性排序 - 标题匹配优先
+        // 这里使用MySQL的INSTR函数模拟相关性排序
+        order = [
+          [literal(`CASE 
+            WHEN title LIKE '%${query}%' THEN 0
+            WHEN content LIKE '%${query}%' THEN 1
+            ELSE 2
+          END`), 'ASC'],
+          ['likes', 'DESC'],
+          ['createdAt', 'DESC']
+        ];
+        break;
+    }
+
+    // 执行搜索
+    const posts = await Post.findAndCountAll({
+      where: whereClause,
+      limit: parseInt(limit),
+      offset: offset,
+      order: order,
+      include: [
+        {
+          model: User,
+          as: 'author',
+          attributes: ['id', 'username', 'avatar', 'nickname']
+        },
+        {
+          model: PostImage,
+          as: 'images',
+          attributes: ['id', 'imageUrl', 'position'],
+          order: [['position', 'ASC']]
+        },
+        {
+          model: PostVideo,
+          as: 'videos',
+          attributes: ['id', 'videoUrl', 'coverUrl', 'duration']
+        }
+      ]
+    });
+
+    // 格式化返回结果
+    return res.status(200).json({
+      success: true,
+      data: {
+        total: posts.count,
+        totalPages: Math.ceil(posts.count / parseInt(limit)),
+        currentPage: parseInt(page),
+        posts: posts.rows.map(post => {
+          const formattedPost = {
+            ...post.toJSON(),
+            author: {
+              ...post.author.toJSON(),
+              name: post.author.nickname || post.author.username  // 使用昵称，如果没有则使用用户名
+            }
+          };
+
+          // 确保帖子有封面图片
+          if (!formattedPost.coverImage) {
+            if (formattedPost.images && formattedPost.images.length > 0) {
+              formattedPost.coverImage = formattedPost.images[0].imageUrl;
+            } else if (formattedPost.videos && formattedPost.videos.length > 0) {
+              formattedPost.coverImage = formattedPost.videos[0].coverUrl;
+            }
+          }
+
+          return formattedPost;
+        })
+      }
+    });
+  } catch (error) {
+    console.error('搜索帖子出错:', error);
+    return res.status(500).json({
+      success: false,
+      message: '搜索帖子失败',
       error: error.message
     });
   }

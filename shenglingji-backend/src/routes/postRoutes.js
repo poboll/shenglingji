@@ -5,6 +5,9 @@ const { authenticateUser } = require('../middlewares/auth');
 const upload = require('../middlewares/upload');
 
 // 公共路由 - 不需要登录
+// 搜索帖子
+router.get('/search', postController.searchPosts);
+
 // 获取植物帖子列表
 router.get('/plants', postController.getPlantPosts);
 
