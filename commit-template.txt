@@ -1,0 +1,14 @@
+# 提交信息模板
+# 格式: <type>: <CAPITALIZED DESCRIPTION>
+# 例如: fix: UPDATE app icon
+# 或者: feat: ADD new feature
+#
+# 类型可以是:
+# feat: 新功能
+# fix: 修复bug
+# docs: 文档更改
+# style: 代码风格调整
+# refactor: 代码重构
+# perf: 性能优化
+# test: 测试相关
+# chore: 构建过程或辅助工具的变动
