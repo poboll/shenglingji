@@ -6,7 +6,7 @@
     <title>生灵集 - 探索自然之美的生态平台</title>
     <meta name="description" content="生灵集 (Sheng Ling Ji) - 探索、学习和分享自然之美的跨平台应用。">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="https://raw.githubusercontent.com/poboll/shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,13 +15,14 @@
     <header>
         <nav class="navbar">
             <div class="nav-logo">
-                <img src="images/logo.png" alt="生灵集 Logo">
+                <img src="https://raw.githubusercontent.com/poboll/shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" alt="生灵集 Logo">
                 <span class="nav-logo-text">生灵集</span>
             </div>
             <div class="nav-links">
                 <a href="#features">核心功能</a>
                 <a href="#screenshots">应用截图</a>
                 <a href="#tech">技术栈</a>
+                <a href="#download">下载体验</a>
             </div>
             <a href="https://github.com/poboll/shenglingji" target="_blank" class="nav-cta">
                 <i class='bx bxl-github'></i> GitHub
@@ -35,7 +36,7 @@
                 <h1>探索、学习、分享 <br> <span class="highlight">自然之美</span></h1>
                 <p>「生灵集」是一个充满活力的跨平台社区，致力于连接所有自然爱好者。无论是植物的静谧，还是动物的灵动，在这里都能找到共鸣。</p>
                 <div class="hero-cta-group">
-                    <a href="#" class="btn btn-primary">立即下载 App</a>
+                    <a href="#download" class="btn btn-primary">立即下载 App</a>
                     <a href="https://github.com/poboll/shenglingji" target="_blank" class="btn btn-secondary">查看源码</a>
                 </div>
             </div>
@@ -93,18 +94,18 @@
             <div class="screenshot-carousel fade-in">
                 <div class="carousel-viewport">
                     <div class="carousel-track">
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/splash_screen.png" alt="启动页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/home_plants.png" alt="植物首页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/home_animals.png" alt="动物首页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/search_hot.png" alt="搜索页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/search_results.png" alt="搜索结果页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/quiz_start.png" alt="测验开始"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/quiz_progress.png" alt="测验进行中"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/shopping.png" alt="购物页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/messages.png" alt="消息页"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/profile.png" alt="个人中心"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/edit_profile.png" alt="编辑资料"></div></div></div>
-                        <div class="carousel-slide"><div class="phone-mockup"><div class="phone-mockup-screen"><img src="images/screenshots/settings.png" alt="设置页"></div></div></div>
+                        <div class="carousel-slide"><img src="images/screenshots/splash_screen.png" alt="启动页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/home_plants.png" alt="植物首页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/home_animals.png" alt="动物首页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/search.png" alt="搜索页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/search_results.png" alt="搜索结果页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/quiz_start.png" alt="测验开始"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/quiz_progress.png" alt="测验进行中"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/shopping.png" alt="购物页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/messages.png" alt="消息页"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/profile.png" alt="个人中心"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/edit_profile.png" alt="编辑资料"></div>
+                        <div class="carousel-slide"><img src="images/screenshots/settings.png" alt="设置页"></div>
                     </div>
                 </div>
                 <div class="carousel-nav">
@@ -158,78 +159,102 @@
                     <div class="quick-start-column">
                         <h3><i class='bx bx-server'></i> 后端服务</h3>
                         <p>后端采用 Node.js 和 Express 构建，负责提供 API 服务和数据处理。</p>
-                        <div class="code-block">
-                            <span># 1. 克隆仓库</span>
-                            <br>
-                            git clone https://github.com/poboll/shenglingji.git
-                            <br><br>
-                            <span># 2. 进入后端目录并安装依赖</span>
-                            <br>
-                            cd shenglingji/shenglingji-backend
-                            <br>
-                            npm install
-                            <br><br>
-                            <span># 3. 配置 .env 文件 (数据库等)</span>
-                            <br>
-                            cp .env.example .env
-                            <br><br>
-                             <span># 4. 启动服务</span>
-                            <br>
-                            npm start
-                        </div>
-                    </div>
-                    <div class="quick-start-column">
-                        <h3><i class='bx bxl-android' ></i> 安卓客户端</h3>
-                        <p>安卓端使用 Kotlin 和 Jetpack Compose 构建，提供现代化的原生体验。</p>
-                         <div class="code-block">
-                            <span># 1. 使用 Android Studio 打开项目</span>
-                            <br>
-                            File > Open... > (选择 'shenglingji/shenglingji-android' 目录)
-                            <br><br>
-                            <span># 2. 等待 Gradle 同步完成</span>
-                            <br>
-                            Android Studio 会自动下载所需依赖
-                             <br><br>
-                            <span># 3. 修改后端 API 地址</span>
-                            <br>
-                            在代码中找到 API 地址配置，修改为您的本地后端地址 (e.g., http://10.0.2.2:3000)
-                             <br><br>
-                            <span># 4. 运行应用</span>
-                            <br>
-                            点击 'Run' 按钮或使用快捷键 (Shift+F10)
-                        </div>
+                        <div class="code-block"><pre><code><span># 1. 克隆仓库</span>git clone https://github.com/poboll/shenglingji.git
+
+<span># 2. 进入后端目录并安装依赖</span>cd shenglingji/shenglingji-backend
+npm install
+
+<span># 3. 配置 .env 文件 (数据库等)</span>cp .env.example .env
+
+<span># 4. 启动服务</span>npm start</code></pre>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="quick-start-column">
+                    <h3><i class='bx bxl-android' ></i> 安卓客户端</h3>
+                    <p>安卓端使用 Kotlin 和 Jetpack Compose 构建，提供现代化的原生体验。</p>
+                    <div class="code-block"><pre><code><span># 1. 使用 Android Studio 打开项目</span>File > Open... > (选择 'shenglingji/shenglingji-android' 目录)
 
-        <section class="container">
-            <div class="contributing-content fade-in">
-                 <h2>成为贡献者</h2>
-                 <p>我们欢迎任何形式的贡献，无论是代码、文档还是建议。请在 GitHub 上提出您的问题或发起 Pull Request，共同完善「生灵集」。</p>
-                 <a href="https://github.com/poboll/shenglingji/issues" target="_blank" class="btn btn-secondary">提出 Issue</a>
-            </div>
-        </section>
-    </main>
+<span># 2. 等待 Gradle 同步完成</span>Android Studio 会自动下载所需依赖
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="生灵集 Logo">
-                <span class="footer-logo-text">生灵集</span>
+<span># 3. 修改后端 API 地址</span>在代码中找到 API 地址配置，修改为您的本地后端地址 (e.g., http://10.0.2.2:3000)
+
+<span># 4. 运行应用</span>点击 'Run' 按钮或使用快捷键 (Shift+F10)</code></pre>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="#features">核心功能</a>
-                <a href="#screenshots">应用截图</a>
-                <a href="https://github.com/poboll/shenglingji-android" target="_blank">Android 客户端</a>
-                <a href="https://github.com/poboll/shenglingji-backend" target="_blank">后端服务</a>
-            </div>
-            <p class="footer-copyright">
-                &copy; 2024 Shenglingji. All Rights Reserved. Designed with ❤️.
-            </p>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/main.js"></script>
+    <section id="download" class="container">
+        <div class="section-header fade-in">
+            <h2>下载体验</h2>
+            <p>选择适合您的版本，立即开始探索自然之美。</p>
+        </div>
+        <div class="download-options fade-in">
+            <div class="download-card">
+                <h3><i class='bx bxl-android'></i> Android 版</h3>
+                <span class="version-badge">v1.0.0</span>
+                <p>适用于 Android 7.0 及以上版本，提供完整功能体验。</p>
+                <a href="https://github.com/poboll/shenglingji-android/releases" class="btn btn-primary">下载 APK</a>
+            </div>
+            <div class="download-card">
+                <h3><i class='bx bx-code-alt'></i> 源代码</h3>
+                <span class="version-badge">最新版本</span>
+                <p>获取完整源代码，进行个性化定制或参与项目开发。</p>
+                <a href="https://github.com/poboll/shenglingji" class="btn btn-secondary">访问 GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contribute" class="container">
+        <div class="section-header fade-in">
+            <h2>成为贡献者</h2>
+            <p>我们欢迎任何形式的贡献，无论是代码、文档还是建议。一起完善「生灵集」！</p>
+        </div>
+        <div class="features-grid fade-in">
+            <div class="feature-card">
+                <div class="feature-icon"><i class='bx bx-bug'></i></div>
+                <h3>报告问题</h3>
+                <p>发现 bug 或有改进建议？请在 GitHub 上提交 Issue。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class='bx bx-git-pull-request'></i></div>
+                <h3>提交代码</h3>
+                <p>欢迎提交 Pull Request，共同改进项目代码。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class='bx bx-book-content'></i></div>
+                <h3>完善文档</h3>
+                <p>帮助我们改进文档，让更多人能够使用这个项目。</p>
+            </div>
+        </div>
+        <div class="contact-links fade-in">
+            <a href="https://github.com/poboll" class="contact-link" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="mailto:contact@example.com" class="contact-link"><i class='bx bx-envelope'></i></a>
+            <a href="#" class="contact-link"><i class='bx bxl-twitter'></i></a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-logo">
+            <img src="https://raw.githubusercontent.com/poboll/shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" alt="生灵集 Logo">
+            <span class="footer-logo-text">生灵集</span>
+        </div>
+        <div class="footer-links">
+            <a href="#features">核心功能</a>
+            <a href="#screenshots">应用截图</a>
+            <a href="#tech">技术栈</a>
+            <a href="#download">下载体验</a>
+            <a href="https://github.com/poboll/shenglingji-android" target="_blank">Android 客户端</a>
+            <a href="https://github.com/poboll/shenglingji-backend" target="_blank">后端服务</a>
+        </div>
+        <p class="footer-copyright">
+            &copy; 2024 Shenglingji. All Rights Reserved. Designed with ❤️.
+        </p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html> 
