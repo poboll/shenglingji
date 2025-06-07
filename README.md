@@ -41,9 +41,19 @@ shenglingji/
 
 Android 客户端采用 MVVM 架构模式，结合 Jetpack Compose 声明式 UI 框架，实现高效的 UI 渲染和状态管理。
 
+- **UI 层**: Jetpack Compose 构建现代化界面
+- **ViewModel 层**: 管理 UI 状态，处理业务逻辑
+- **Repository 层**: 数据获取与缓存策略
+- **数据源层**: 网络请求和本地存储访问
+
 ### 后端架构
 
 后端服务采用 MVC 架构模式，基于 Express 框架构建 RESTful API，使用 Sequelize ORM 进行数据库操作。
+
+- **Controller**: 处理请求和响应
+- **Service**: 业务逻辑实现
+- **Model**: 数据库模型定义
+- **Middleware**: 请求处理中间件
 
 ## 📊 数据库设计
 
@@ -137,8 +147,12 @@ cd shenglingji/shenglingji-backend
 # 安装依赖
 npm install
 
+# 配置环境变量
+cp .env.example .env
+# 编辑 .env 文件设置数据库连接信息
+
 # 初始化数据库
-mysql -u root -p < db/shenglingji.sql
+mysql -u root -p < db/init.sql
 
 # 启动服务
 npm start
@@ -147,17 +161,22 @@ npm start
 ### Android 客户端设置
 
 ```bash
-# 进入 Android 项目目录
-cd shenglingji/shenglingji-android
+# 克隆仓库
+git clone https://github.com/poboll/shenglingji-android.git
+cd shenglingji-android
 
 # 使用 Android Studio 打开项目
-# 或使用命令行构建
-./gradlew assembleDebug   # 构建调试版本
-./gradlew assembleRelease # 构建发布版本
+# File > Open... > 选择 shenglingji-android 目录
 
-# APK 将位于以下路径:
-# app/build/outputs/apk/debug/app-debug.apk
-# app/build/outputs/apk/release/app-release.apk
+# 等待 Gradle 同步完成
+# Android Studio 会自动下载所需依赖
+
+# 修改 API 配置
+# 打开 app/src/main/java/com/shenglingji/android/network/ApiService.kt
+# 修改 BASE_URL 为您的后端服务地址 (本地开发可使用 http://10.0.2.2:3000)
+
+# 构建并运行应用
+# 点击 Android Studio 工具栏的 Run 按钮或使用快捷键 Shift+F10
 ```
 
 ## 📱 应用截图
@@ -224,7 +243,7 @@ cd shenglingji/shenglingji-android
 
 - Android 客户端遵循 [Kotlin 编码规范](https://kotlinlang.org/docs/coding-conventions.html)
 - 后端服务遵循 [Airbnb JavaScript 风格指南](https://github.com/airbnb/javascript)
-- 提交信息遵循自定义规范，格式为：`类型: 描述`（如：`add: add new features`）
+- 提交信息遵循自定义规范，格式为：`类型: 描述`（如：`add: 添加用户登录功能`）
 
 ## 📄 许可证
 
