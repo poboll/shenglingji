@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="public/images/screenshots/app_icon.png" width="120" height="120" alt="生灵集">
+  <img src="https://raw.githubusercontent.com/poboll/
+  shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" 
+  width="120" height="120" alt="生灵集">
 </p>
 
 <h1 align="center">生灵集 (Sheng Ling Ji)</h1>
@@ -161,9 +163,9 @@ cd shenglingji/shenglingji-android
 
 <table>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/splash_screen.png" width="200" alt="启动页"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/home_plants.png" width="200" alt="植物首页"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/home_animals.png" width="200" alt="动物首页"></td>
+    <td><img src="public/images/screenshots/splash_screen.png" width="200" alt="启动页"></td>
+    <td><img src="public/images/screenshots/home_plants.png" width="200" alt="植物首页"></td>
+    <td><img src="public/images/screenshots/home_animals.png" width="200" alt="动物首页"></td>
   </tr>
 </table>
 
@@ -171,8 +173,8 @@ cd shenglingji/shenglingji-android
 
 <table>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/quiz_start.png" width="200" alt="测验开始"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/quiz_progress.png" width="200" alt="测验进行中"></td>
+    <td><img src="public/images/screenshots/quiz_start.png" width="200" alt="测验开始"></td>
+    <td><img src="public/images/screenshots/quiz_progress.png" width="200" alt="测验进行中"></td>
   </tr>
 </table>
 
@@ -180,9 +182,9 @@ cd shenglingji/shenglingji-android
 
 <table>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/shopping.png" width="200" alt="购物"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/messages.png" width="200" alt="消息"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/search.png" width="200" alt="搜索"></td>
+    <td><img src="public/images/screenshots/shopping.png" width="200" alt="购物"></td>
+    <td><img src="public/images/screenshots/messages.png" width="200" alt="消息"></td>
+    <td><img src="public/images/screenshots/search.png" width="200" alt="搜索"></td>
   </tr>
 </table>
 
@@ -190,9 +192,9 @@ cd shenglingji/shenglingji-android
 
 <table>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/profile.png" width="200" alt="个人中心"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/edit_profile.png" width="200" alt="编辑资料"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/settings.png" width="200" alt="设置"></td>
+    <td><img src="public/images/screenshots/profile.png" width="200" alt="个人中心"></td>
+    <td><img src="public/images/screenshots/edit_profile.png" width="200" alt="编辑资料"></td>
+    <td><img src="public/images/screenshots/settings.png" width="200" alt="设置"></td>
   </tr>
 </table>
 
@@ -200,8 +202,8 @@ cd shenglingji/shenglingji-android
 
 <table>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/search_results.png" width="200" alt="搜索结果"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/login.png" width="200" alt="登录"></td>
+    <td><img src="public/images/screenshots/search_results.png" width="200" alt="搜索结果"></td>
+    <td><img src="public/images/screenshots/login.png" width="200" alt="登录"></td>
   </tr>
 </table>
 
