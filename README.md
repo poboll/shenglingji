@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/poboll/
-  shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" 
+  <img src="https://raw.githubusercontent.com/poboll/shenglingji-android/main/app/src/main/res/drawable/icon_logo.png" 
   width="120" height="120" alt="生灵集">
 </p>
 
@@ -213,7 +212,7 @@ cd shenglingji/shenglingji-android
 
 1. Fork 本仓库
 2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'add: 添加新功能'`)
+3. 提交你的更改 (`git commit -m 'add: add new features'`)
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 开启一个 Pull Request
 
@@ -221,7 +220,7 @@ cd shenglingji/shenglingji-android
 
 - Android 客户端遵循 [Kotlin 编码规范](https://kotlinlang.org/docs/coding-conventions.html)
 - 后端服务遵循 [Airbnb JavaScript 风格指南](https://github.com/airbnb/javascript)
-- 提交信息遵循自定义规范，格式为：`类型: 描述`（如：`add: 添加用户登录功能`）
+- 提交信息遵循自定义规范，格式为：`类型: 描述`（如：`add: add new features`）
 
 ## 📄 许可证
 
