@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/poboll/shenglingji/raw/main/shenglingji-android/app/src/main/res/drawable/icon_logo.png" width="120" height="120" alt="生灵集">
+  <img src="public/images/screenshots/app_icon.png" width="120" height="120" alt="生灵集">
 </p>
 
-<h1 align="center">生灵集</h1>
+<h1 align="center">生灵集 (Sheng Ling Ji)</h1>
 
 <p align="center">
   <a href="https://github.com/poboll/shenglingji/blob/main/LICENSE">
@@ -43,6 +43,21 @@ Android 客户端采用 MVVM 架构模式，结合 Jetpack Compose 声明式 UI 
 ### 后端架构
 
 后端服务采用 MVC 架构模式，基于 Express 框架构建 RESTful API，使用 Sequelize ORM 进行数据库操作。
+
+## 📊 数据库设计
+
+系统使用 MySQL 关系型数据库，主要包含以下核心表：
+
+### 用户相关表
+- **Users**: 用户基本信息
+- **Profiles**: 用户详细资料
+- **user_followings**: 用户关注关系
+
+### 内容相关表
+- **posts**: 帖子主体内容
+- **post_images**: 帖子图片资源
+- **post_videos**: 帖子视频资源
+- **comments**: 评论信息
 
 ## 🚀 功能特性
 
@@ -122,7 +137,7 @@ cd shenglingji/shenglingji-backend
 npm install
 
 # 初始化数据库
-mysql -u root -p < db/init.sql
+mysql -u root -p < db/shenglingji.sql
 
 # 启动服务
 npm start
@@ -142,16 +157,51 @@ cd shenglingji/shenglingji-android
 
 ## 📱 应用截图
 
+### 启动与首页
+
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/4dbcd70e-4f2d-4b3b-af9d-2d06628aa31d" width="200" alt="首页"></td>
-    <td><img src="https://github.com/user-attachments/assets/937d3f49-2b34-4232-8ec0-5a0793869262" width="200" alt="发现"></td>
-    <td><img src="https://github.com/user-attachments/assets/6e55ca7a-fa58-43a5-bb9a-ebbf74c3717f" width="200" alt="详情"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/splash_screen.png" width="200" alt="启动页"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/home_plants.png" width="200" alt="植物首页"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/home_animals.png" width="200" alt="动物首页"></td>
   </tr>
+</table>
+
+### 知识测验
+
+<table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/2b02b5d2-3de6-430d-b533-8a066824a34f" width="200" alt="搜索"></td>
-    <td><img src="https://github.com/user-attachments/assets/1ffc6d3d-31d5-482d-9c88-b5da7af630ee" width="200" alt="个人中心"></td>
-    <td><img src="https://github.com/user-attachments/assets/b02778a4-1fc5-491a-9401-f4ee419e7f14" width="200" alt="设置"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/quiz_start.png" width="200" alt="测验开始"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/quiz_progress.png" width="200" alt="测验进行中"></td>
+  </tr>
+</table>
+
+### 购物与社交
+
+<table>
+  <tr>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/shopping.png" width="200" alt="购物"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/messages.png" width="200" alt="消息"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/search.png" width="200" alt="搜索"></td>
+  </tr>
+</table>
+
+### 用户中心
+
+<table>
+  <tr>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/profile.png" width="200" alt="个人中心"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/edit_profile.png" width="200" alt="编辑资料"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/settings.png" width="200" alt="设置"></td>
+  </tr>
+</table>
+
+### 搜索与登录
+
+<table>
+  <tr>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/search_results.png" width="200" alt="搜索结果"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/poboll/shenglingji/public/images/screenshots/login.png" width="200" alt="登录"></td>
   </tr>
 </table>
 
@@ -161,7 +211,7 @@ cd shenglingji/shenglingji-android
 
 1. Fork 本仓库
 2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交你的更改 (`git commit -m 'feat: add some amazing feature'`)
+3. 提交你的更改 (`git commit -m 'add: 添加新功能'`)
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 开启一个 Pull Request
 
@@ -169,7 +219,7 @@ cd shenglingji/shenglingji-android
 
 - Android 客户端遵循 [Kotlin 编码规范](https://kotlinlang.org/docs/coding-conventions.html)
 - 后端服务遵循 [Airbnb JavaScript 风格指南](https://github.com/airbnb/javascript)
-- 提交信息遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范
+- 提交信息遵循自定义规范，格式为：`类型: 描述`（如：`add: 添加用户登录功能`）
 
 ## 📄 许可证
 
