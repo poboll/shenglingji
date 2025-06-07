@@ -35,6 +35,10 @@ build/
 *.pdf
 shenglingji-backend/public/uploads/
 
+# But allow screenshots in public/images/screenshots
+!public/images/screenshots/
+!public/images/screenshots/*.png
+
 # Package files
 package-lock.json
 *.lock

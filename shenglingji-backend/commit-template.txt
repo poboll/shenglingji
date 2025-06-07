@@ -1,0 +1,17 @@
+feat: 
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Commit message format:
+# feat: description in lowercase
+# fix: description in lowercase
+# docs: description in lowercase
+# style: description in lowercase
+# refactor: description in lowercase
+# test: description in lowercase
+# chore: description in lowercase
+#
+# Example:
+# feat: add user authentication system
+# fix: resolve login validation issue
