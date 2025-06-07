@@ -150,10 +150,14 @@ npm start
 # 进入 Android 项目目录
 cd shenglingji/shenglingji-android
 
-# 使用 Gradle 构建项目
-./gradlew build
+# 使用 Android Studio 打开项目
+# 或使用命令行构建
+./gradlew assembleDebug   # 构建调试版本
+./gradlew assembleRelease # 构建发布版本
 
-# 在 Android Studio 中打开项目
+# APK 将位于以下路径:
+# app/build/outputs/apk/debug/app-debug.apk
+# app/build/outputs/apk/release/app-release.apk
 ```
 
 ## 📱 应用截图
